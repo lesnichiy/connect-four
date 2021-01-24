@@ -8,7 +8,7 @@ function GameBoard() {
     const row = [];
 
     for (let j = 0; j <= 6; j++) {
-      row.push(<GameBoardCell />);
+      row.push(<GameBoardCell rowNum={i} colNum={j} />);
     }
     cells.push(row);
   }
