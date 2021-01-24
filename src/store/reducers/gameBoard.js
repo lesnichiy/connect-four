@@ -11,7 +11,7 @@ const initialState = {
     [], // col 3
     [], // col 4
     [], // col 5
-    ['www'], // col 6
+    [], // col 6
   ]
 };
 
