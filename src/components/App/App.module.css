@@ -1,0 +1,7 @@
+.app-wrapper {
+  margin: 10px auto;
+  width: 800px;
+  height: 500px;
+  border: 1px solid navy;
+  border-radius: 20px;
+}

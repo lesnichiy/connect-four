@@ -1,0 +1,6 @@
+.wrapper {
+  box-sizing: border-box;
+  width: 350px;
+  height: 300px;
+  border: 1px solid orangered;
+}
