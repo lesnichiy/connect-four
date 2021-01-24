@@ -3,9 +3,14 @@ const initialState = {
     playerOne: 'red',
     playerTwo: 'yellow'
   },
+  lastDiscDropCell: {
+    discColor: '',
+    col: null,
+    row: null
+  },
   currentPlayer: 'red',
   board: [
-    [], // col 0
+    [], // col 0 - row 0 is bottom, row 5 is top
     [], // col 1
     [], // col 2
     [], // col 3
@@ -29,10 +34,16 @@ const gameBoard = (state = initialState, action) => {
       const { col, currentPlayer } = action.payload;
       const newBoard = state.board.slice();
       newBoard[col].push(currentPlayer);
+      const row = newBoard[col].length - 1;
 
       return {
         ...state,
-        board: newBoard
+        board: newBoard,
+        lastDiscDropCell: {
+          discColor: currentPlayer,
+          col: col,
+          row: row
+        }
       };
     }
     default:
