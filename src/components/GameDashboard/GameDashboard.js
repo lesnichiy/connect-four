@@ -7,7 +7,7 @@ function GameDashboard(props) {
 
   return (
       <div>
-        Current Player: {state.gameBoard.currentPlayer}
+        Current Player: {currentPlayer}
       </div>
   );
 }

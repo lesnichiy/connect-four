@@ -16,8 +16,6 @@ function GameBoard() {
     cells.push(row);
   }
 
-  console.log(`Cell from GameBoard component:`, cells);
-
   return (
     <div className={styles.wrapper}>
       {cells}
