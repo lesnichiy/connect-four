@@ -26,8 +26,10 @@ function GameBoardCell(props) {
       <div
           className={[styles.wrapper, styles[cellColorClass]].join(' ')}
           onClick={() => {
-            changePlayer(currentPlayer);
-            dropDiscToColumn(colNum, currentPlayer)}
+            if ( state.gameBoard.board[colNum].length < 6 ) {
+              changePlayer(currentPlayer);
+              dropDiscToColumn(colNum, currentPlayer)}
+            }
           }
       >
         row: {rowNum}, col: {colNum}
