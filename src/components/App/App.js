@@ -1,10 +1,17 @@
 import styles from './App.module.css';
 import GameBoard from '../GameBoard';
+import GameDashboard from '../GameDashboard';
 
-function App() {
+import store from '../../store/store';
+
+function App(props) {
+
+
+
   return (
     <div className={styles['app-wrapper']}>
       App
+      <GameDashboard />
       <GameBoard />
     </div>
   );
