@@ -27,7 +27,7 @@ const gameBoard = (state = initialState, action) => {
     }
     case 'DROP_DISC_TO_COLUMN': {
       const { col, currentPlayer } = action.payload;
-      const newBoard = state.board;
+      const newBoard = state.board.slice();
       newBoard[col].push(currentPlayer);
 
       return {

@@ -18,7 +18,9 @@ function GameBoardCell(props) {
 
   const dropDiscToColumn = (col, player) => dispatch(dropDiscToColumnAction(col, player));
 
-  const cellColorClass = (state.gameBoard.board[colNum][rowNum]) ? state.gameBoard.board[colNum][rowNum] : '' ;
+  // define class for current cell
+  const currentCellColor = state.gameBoard.board[colNum][rowNum];
+  const cellColorClass = (currentCellColor) ? currentCellColor : '' ;
 
   return (
       <div
