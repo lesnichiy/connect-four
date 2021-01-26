@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { changePlayerAction } from '../../../store/actions/changePlayer';
 import { dropDiscToColumnAction } from '../../../store/actions/dropDiscToColumn';
 import store from '../../../store/store';
+import { checkWinner } from '../../../utils/checkWinner';
 
 function GameBoardCell(props) {
   const { rowNum, colNum } = props;
@@ -26,9 +27,11 @@ function GameBoardCell(props) {
       <div
           className={[styles.wrapper, styles[cellColorClass]].join(' ')}
           onClick={() => {
-            if ( state.gameBoard.board[colNum].length < 6 ) {
-              changePlayer(currentPlayer);
-              dropDiscToColumn(colNum, currentPlayer)}
+              if ( state.gameBoard.board[colNum].length < 6 ) {
+                changePlayer(currentPlayer);
+                dropDiscToColumn(colNum, currentPlayer);
+                checkWinner();
+              }
             }
           }
       >
