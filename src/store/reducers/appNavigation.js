@@ -13,7 +13,7 @@ const appNavigation = (state = initialState, action) => {
 
       return {
           ...state,
-          isGameOn
+          isGameOn: !isGameOn
       }
     }
     case 'SETTINGS_ON_OFF': {
