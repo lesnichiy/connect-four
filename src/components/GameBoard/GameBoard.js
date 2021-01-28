@@ -19,7 +19,6 @@ function GameBoard() {
   return (
     <div className={styles.wrapper}>
       {cells}
-
     </div>
   );
 }
