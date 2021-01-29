@@ -7,14 +7,15 @@ import { useSelector } from 'react-redux';
 
 function App(props) {
 
-  const state = store.getState();
+  //const state = store.getState();
 
   const isGameOn = useSelector(state => state.appNavigation.isGameOn);
+  const isStartScreenOn = useSelector(state => state.appNavigation.isStartScreenOn);
 
   return (
     <div className={styles['app-wrapper']}>
-      App
-      <StartScreen/>
+      App: CONNECT FOUR (beta)
+      {isStartScreenOn && <StartScreen/>}
 
       {isGameOn &&
         <div>

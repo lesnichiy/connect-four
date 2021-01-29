@@ -1,4 +1,5 @@
 const initialState = {
+  isStartScreenOn: true,
   isGameOn: false,
   isSettingsOn: false,
   isBestScoresOn: false,
@@ -8,6 +9,14 @@ const initialState = {
 const appNavigation = (state = initialState, action) => {
 
   switch (action.type) {
+    case 'START_SCREEN_ON_OFF': {
+      const { isStartScreenOn } = action.payload;
+
+      return {
+        ...state,
+        isStartScreenOn: !isStartScreenOn
+      }
+    }
     case 'GAME_ON_OFF': {
       const { isGameOn } = action.payload;
 
