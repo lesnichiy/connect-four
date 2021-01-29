@@ -7,7 +7,7 @@ import store from '../../store/store';
 function Game(props) {
 
   const state = store.getState();
-  const { playerOne, playerTwo } = state.gameBoard.players;
+  const { playerOne, playerTwo } = state.players;
 
   return (
       <div className={styles.wrapper}>

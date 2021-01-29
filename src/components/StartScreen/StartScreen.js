@@ -1,5 +1,4 @@
 import styles from './StartScreen.module.css';
-import store from '../../store/store';
 import { gameOnOffAction } from '../../store/actions/gameOnOff';
 import { startScreenOnOffAction } from '../../store/actions/startScreenOnOff';
 import { useDispatch, useSelector } from 'react-redux';
