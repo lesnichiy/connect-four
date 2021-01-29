@@ -1,11 +1,11 @@
 import styles from './Game.module.css';
 import GameBoard from '../GameBoard';
-import GameDashboard from '../GameDashboard';
+import CurrentPlayerDashboard from '../CurrentPlayerDashboard';
 
 function Game(props) {
   return (
       <div>
-        <GameDashboard/>
+        <CurrentPlayerDashboard/>
         <GameBoard/>
       </div>
   );
