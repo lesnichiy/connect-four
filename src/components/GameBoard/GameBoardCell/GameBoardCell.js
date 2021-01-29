@@ -35,7 +35,7 @@ function GameBoardCell(props) {
             }
           }
       >
-        row: {rowNum}, col: {colNum}
+        {/*row: {rowNum}, col: {colNum}*/}
       </div>
   );
 }

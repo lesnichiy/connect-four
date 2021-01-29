@@ -4,4 +4,6 @@
   width: 350px;
   height: 300px;
   background-color: dodgerblue;
+  border: 2px solid navy;
+  border-radius: 8px;
 }

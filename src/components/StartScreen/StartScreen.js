@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from 'react-redux';
 
 function StartScreen(props) {
 
-  const state = store.getState();
   const isGameOn = useSelector(state => state.appNavigation.isGameOn);
   const isStartScreenOn = useSelector(state => state.appNavigation.isStartScreenOn);
   const dispatch = useDispatch();
