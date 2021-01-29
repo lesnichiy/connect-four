@@ -1,7 +1,13 @@
 const initialState = {
   players: {
-    playerOne: 'red',
-    playerTwo: 'yellow'
+    playerOne: {
+      color: 'red',
+      moves: 0
+    },
+    playerTwo: {
+      color: 'yellow',
+      moves: 0
+    }
   },
   lastDiscDropCell: {
     discColor: '',

@@ -14,7 +14,7 @@ function GameBoardCell(props) {
   const currentPlayer = useSelector( state => state.gameBoard.currentPlayer );
   const changePlayer = (player) => {
     const { playerOne, playerTwo } = state.gameBoard.players;
-    player = (player === playerOne) ? playerTwo : playerOne;
+    player = (player === playerOne.color) ? playerTwo.color : playerOne.color;
     return dispatch(changePlayerAction(player));
   };
 
