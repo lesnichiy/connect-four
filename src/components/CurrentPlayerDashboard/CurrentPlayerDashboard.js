@@ -8,13 +8,13 @@ function CurrentPlayerDashboard(props) {
 
   return (
       <div className={styles.wrapper}>
-        Current Player:
-        <div
-            className={[styles.chip, styles[currentPlayer]].join(' ')}
-            style={{
-              left: currentCol * 50 //shift on 50px - width of cell
-            }}
-        >
+        {/*Current Player:*/}
+        <div className={styles['chip-wrapper']}
+             style={{
+               left: currentCol * 50 //shift on 50px - width of cell
+             }}>
+          <div className={[styles.chip, styles[currentPlayer]].join(' ')}>
+          </div>
         </div>
       </div>
   );

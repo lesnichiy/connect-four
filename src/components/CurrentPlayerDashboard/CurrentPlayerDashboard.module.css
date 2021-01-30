@@ -2,6 +2,14 @@
   position: relative;
 }
 
+.chip-wrapper {
+  position: relative;
+  box-sizing: border-box;
+  width: 50px;
+  height: 75px;
+  transition: 0.3s;
+}
+
 .chip {
   position: relative;
   box-sizing: border-box;
@@ -14,6 +22,22 @@
       inset rgba(252,255,255,.7) 0 3px 8px,
       rgba(0,0,0,.8) 0 3px 8px -3px;
   transition: 0.3s;
+}
+
+.chip::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 55px;
+  left: 50%;
+  transform: translateX(-20px);
+  box-sizing: border-box;
+  width: 40px;
+  height: 15px;
+  border-top: 15px solid lightslategrey;
+  border-right: 20px solid transparent;
+  border-bottom: 0 solid transparent;
+  border-left: 20px solid transparent;
 }
 
 .red {
