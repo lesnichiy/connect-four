@@ -14,12 +14,18 @@ function StartScreen(props) {
   return (
       <div className={styles.wrapper}>
         <button className={styles.button}
-                onClick={() => {
+                onClick={(e) => {
+                  e.preventDefault();
                   startGame(isGameOn);
                   startScreenShowHide(isStartScreenOn);
                 }}>Start Game</button>
-        <button className={styles.button}>Settings</button>
-        <button className={styles.button}>Best Scores</button>
+        <button className={styles.button}
+                onClick={(e) => {
+                  e.preventDefault();
+                }}>Settings</button>
+        <button className={styles.button}
+                onClick={(e) => {e.preventDefault();
+                }}>Best Scores</button>
       </div>
   );
 }

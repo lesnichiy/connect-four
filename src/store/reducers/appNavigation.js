@@ -49,6 +49,16 @@ const appNavigation = (state = initialState, action) => {
         isGameOver: isGameOver
       }
     }
+    case 'CLOSE_GAME': {
+      return {
+        ...state,
+        isStartScreenOn: true,
+        isGameOn: false,
+        isSettingsOn: false,
+        isBestScoresOn: false,
+        isGameOver: false
+      };
+    }
     default:
       return state;
   }

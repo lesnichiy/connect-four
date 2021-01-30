@@ -51,6 +51,27 @@ const gameBoard = (state = initialState, action) => {
         currentColCursorOver: colNum
       };
     }
+    case 'CLOSE_GAME': {
+      return {
+        ...state,
+        lastDiscDropCell: {
+          discColor: '',
+          col: null,
+          row: null
+        },
+        currentColCursorOver: 0,
+        currentPlayer: 'red',
+        board: [
+          [], // col 0 - row 0 is bottom, row 5 is top
+          [], // col 1
+          [], // col 2
+          [], // col 3
+          [], // col 4
+          [], // col 5
+          [], // col 6
+        ]
+      };
+    }
     default:
       return state;
   }

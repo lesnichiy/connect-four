@@ -37,6 +37,19 @@ const players = (state = initialState, action) => {
         }
       };
     }
+    case 'CLOSE_GAME': {
+      return {
+        ...state,
+        playerOne: {
+          color: 'red',
+          moves: 0
+        },
+        playerTwo: {
+          color: 'yellow',
+          moves: 0
+        }
+      };
+    }
     default:
       return state;
   }

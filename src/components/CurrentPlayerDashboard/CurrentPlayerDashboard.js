@@ -12,7 +12,7 @@ function CurrentPlayerDashboard(props) {
         <div
             className={[styles.chip, styles[currentPlayer]].join(' ')}
             style={{
-              left: currentCol * 50
+              left: currentCol * 50 //shift on 50px - width of cell
             }}
         >
         </div>
