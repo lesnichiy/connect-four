@@ -5,6 +5,7 @@ import PlayerDashboard from '../PlayerDashboard';
 import store from '../../store/store';
 import { useDispatch } from 'react-redux';
 import { closeGameAction } from '../../store/actions/closeGame';
+import Timer from '../Timer';
 
 function Game(props) {
 
@@ -29,6 +30,9 @@ function Game(props) {
             <GameBoard/>
           </div>
           <PlayerDashboard player={playerTwo.color}/>
+        </div>
+        <div className={styles['time-wrapper']}>
+          <Timer/>
         </div>
       </div>
   );
