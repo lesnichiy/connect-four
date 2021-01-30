@@ -4,6 +4,7 @@ const initialState = {
     col: null,
     row: null
   },
+  currentColCursorOver: 0,
   currentPlayer: 'red',
   board: [
     [], // col 0 - row 0 is bottom, row 5 is top
@@ -40,6 +41,14 @@ const gameBoard = (state = initialState, action) => {
           col: col,
           row: row
         }
+      };
+    }
+    case 'CHANGE_CURRENT_COL_CURSOR_OVER': {
+      const { colNum } = action.payload;
+
+      return {
+        ...state,
+        currentColCursorOver: colNum
       };
     }
     default:

@@ -5,6 +5,7 @@ import { changePlayerAction } from '../../../store/actions/changePlayer';
 import { dropDiscToColumnAction } from '../../../store/actions/dropDiscToColumn';
 import { countMovesRedAction } from '../../../store/actions/countMovesRed';
 import { countMovesYellowAction } from '../../../store/actions/countMovesYellow';
+import { currentColCursorOverAction } from '../../../store/actions/currentColCursorOver';
 import store from '../../../store/store';
 import { checkWinner } from '../../../utils/checkWinner';
 import { gameOverAction } from '../../../store/actions/gameOver';
@@ -48,10 +49,17 @@ function GameBoardCell(props) {
     };
   }
 
+  const changeCurrentColNum = (colNum) => dispatch(currentColCursorOverAction(colNum));
+
+  const handleMouseOver = () => {
+    changeCurrentColNum(colNum);
+  };
+
   return (
       <div
           className={[styles.wrapper, styles[cellColorClass]].join(' ')}
           onClick={handleClickByCell}
+          onMouseOver={handleMouseOver}
       >
         {/*row: {rowNum}, col: {colNum}*/}
       </div>

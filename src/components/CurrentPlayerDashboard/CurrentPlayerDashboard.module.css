@@ -1,4 +1,9 @@
+.wrapper {
+  position: relative;
+}
+
 .chip {
+  position: relative;
   box-sizing: border-box;
   width: 50px;
   height: 50px;
