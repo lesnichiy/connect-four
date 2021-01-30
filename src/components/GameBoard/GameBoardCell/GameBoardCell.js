@@ -57,11 +57,13 @@ function GameBoardCell(props) {
 
   return (
       <div
-          className={[styles.wrapper, styles[cellColorClass]].join(' ')}
+          className={styles.wrapper}
           onClick={handleClickByCell}
           onMouseOver={handleMouseOver}
       >
-        {/*row: {rowNum}, col: {colNum}*/}
+        <div className={[styles.cell, styles[cellColorClass]].join(' ')}>
+          {/*row: {rowNum}, col: {colNum}*/}
+        </div>
       </div>
   );
 }
