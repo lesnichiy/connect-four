@@ -5,6 +5,8 @@ export const checkWinner = () => {
   const { col, row, discColor } = state.gameBoard.lastDiscDropCell;
   const currentBoardArray = state.gameBoard.board;
 
+  let isWinner = false;
+
   const checkHorizontal = () => {
     let countSameCell = 1;
     //horizontal check
@@ -100,5 +102,8 @@ export const checkWinner = () => {
   )
   {
     console.log(discColor, ' is WIN ');
+    isWinner = true;
   }
+
+  return isWinner;
 };

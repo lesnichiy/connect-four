@@ -7,12 +7,14 @@ import { countMovesRedAction } from '../../../store/actions/countMovesRed';
 import { countMovesYellowAction } from '../../../store/actions/countMovesYellow';
 import store from '../../../store/store';
 import { checkWinner } from '../../../utils/checkWinner';
+import { gameOverAction } from '../../../store/actions/gameOver';
 
 function GameBoardCell(props) {
   const { rowNum, colNum } = props;
 
   const state = store.getState();
   const { playerOne, playerTwo } = state.players;
+  const isGameOver = state.appNavigation.isGameOver;
 
   const dispatch = useDispatch();
   const currentPlayer = useSelector( state => state.gameBoard.currentPlayer );
@@ -24,23 +26,27 @@ function GameBoardCell(props) {
   const dropDiscToColumn = (col, player) => dispatch(dropDiscToColumnAction(col, player));
   const countMovesRed = (player) => dispatch(countMovesRedAction(player));
   const countMovesYellow = (player) => dispatch(countMovesYellowAction(player));
+  const gameOver = (isGameOver) => dispatch(gameOverAction(isGameOver));
 
   // define class for current cell
   const currentCellColor = state.gameBoard.board[colNum][rowNum];
   const cellColorClass = (currentCellColor) ? currentCellColor : '' ;
 
-  const handleClickByCell = () => {
-    if ( state.gameBoard.board[colNum].length < 6 ) {
-      changePlayer(currentPlayer);
-      dropDiscToColumn(colNum, currentPlayer);
-
-      if (currentPlayer === playerOne.color) countMovesRed(currentPlayer);
-      if (currentPlayer === playerTwo.color) countMovesYellow(currentPlayer);
-
-
-      checkWinner();
-    }
-  };
+  //define func by condition. Lock Click if Game Over
+  let handleClickByCell;
+  if (isGameOver) {
+    handleClickByCell = () => {};
+  } else {
+    handleClickByCell = () => {
+      if ( state.gameBoard.board[colNum].length < 6 ) {
+        changePlayer(currentPlayer);
+        dropDiscToColumn(colNum, currentPlayer);
+        if (currentPlayer === playerOne.color) countMovesRed(currentPlayer);
+        if (currentPlayer === playerTwo.color) countMovesYellow(currentPlayer);
+        gameOver(checkWinner());
+      }
+    };
+  }
 
   return (
       <div

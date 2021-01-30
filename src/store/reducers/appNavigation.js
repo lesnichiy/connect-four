@@ -3,7 +3,7 @@ const initialState = {
   isGameOn: false,
   isSettingsOn: false,
   isBestScoresOn: false,
-  isAboutOn: false
+  isGameOver: false
 };
 
 const appNavigation = (state = initialState, action) => {
@@ -41,12 +41,12 @@ const appNavigation = (state = initialState, action) => {
         isBestScoresOn
       }
     }
-    case 'ABOUT_ON_OFF': {
-      const { isAboutOn } = action.payload;
+    case 'GAME_OVER': {
+      const { isGameOver } = action.payload;
 
       return {
         ...state,
-        isAboutOn
+        isGameOver: isGameOver
       }
     }
     default:

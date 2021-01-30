@@ -20,7 +20,6 @@ function StartScreen(props) {
                 }}>Start Game</button>
         <button className={styles.button}>Settings</button>
         <button className={styles.button}>Best Scores</button>
-        <button className={styles.button}>About</button>
       </div>
   );
 }

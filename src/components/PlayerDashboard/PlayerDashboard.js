@@ -9,6 +9,9 @@ function PlayerDashboard(props) {
   const state = store.getState();
 
   const players = useSelector(state => state.players);
+  const isGameOver = useSelector(state => state.appNavigation.isGameOver);
+  const lastPlayerColor = useSelector(state => state.gameBoard.lastDiscDropCell.discColor);
+
   let moves = (player === state.players.playerOne.color)
       ? players.playerOne.moves
       : players.playerTwo.moves;
@@ -20,6 +23,8 @@ function PlayerDashboard(props) {
           <div className={[styles.chip, styles[player]].join(' ')}></div>
         </div>
         <div className={styles.moves}>Moves: {moves}</div>
+        { (isGameOver && player === lastPlayerColor)
+          && <div className={styles.winner}>WINNER!!!</div>}
       </div>
   );
 }
