@@ -8,13 +8,14 @@ function PlayerDashboard(props) {
 
   const state = store.getState();
 
-  const players = useSelector(state => state.players);
+  //const players = useSelector(state => state.players);
   //const isGameOver = useSelector(state => state.appNavigation.isGameOver);
   //const lastPlayerColor = useSelector(state => state.gameBoard.lastDiscDropCell.discColor);
-  //const currentPlayer = useSelector(state => state.gameBoard.currentPlayer);
-  const { currentPlayer } = state.gameBoard;
+  const currentPlayer = useSelector(state => state.gameBoard.currentPlayer);
+  //const { currentPlayer } = state.gameBoard;
   const lastPlayerColor = state.gameBoard.lastDiscDropCell.discColor;
   const { isGameOver } = state.appNavigation;
+  const { players } = state;
 
   let moves = (player === state.players.playerOne.color)
       ? players.playerOne.moves

@@ -4,7 +4,7 @@ import CurrentPlayerDashboard from '../CurrentPlayerDashboard';
 import PlayerDashboard from '../PlayerDashboard';
 import store from '../../store/store';
 import { useDispatch } from 'react-redux';
-import { closeGameAction } from '../../store/actions/closeGame';
+import { returnToStartScreenAction } from '../../store/actions/returnToStartScreen';
 import Timer from '../Timer';
 
 function Game(props) {
@@ -13,14 +13,14 @@ function Game(props) {
   const { playerOne, playerTwo } = state.players;
   const dispatch = useDispatch();
 
-  const closeGame = () => dispatch(closeGameAction());
+  const returnToStartScreen = () => dispatch(returnToStartScreenAction());
 
   return (
       <div className={styles.wrapper}>
         <div className={styles['nav-wrapper']}>
           <button className={styles.button} onClick={(e) => {
             e.preventDefault();
-            closeGame();
+            returnToStartScreen();
           }}>Back to menu</button>
         </div>
         <div className={styles['game-wrapper']}>

@@ -49,7 +49,7 @@ const appNavigation = (state = initialState, action) => {
         isGameOver: isGameOver
       }
     }
-    case 'CLOSE_GAME': {
+    case 'RETURN_TO_START_SCREEN': {
       return {
         ...state,
         isStartScreenOn: true,

@@ -37,7 +37,7 @@ const players = (state = initialState, action) => {
         }
       };
     }
-    case 'CLOSE_GAME': {
+    case 'RETURN_TO_START_SCREEN': {
       return {
         ...state,
         playerOne: {

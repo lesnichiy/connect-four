@@ -51,7 +51,7 @@ const gameBoard = (state = initialState, action) => {
         currentColCursorOver: colNum
       };
     }
-    case 'CLOSE_GAME': {
+    case 'RETURN_TO_START_SCREEN': {
       return {
         ...state,
         lastDiscDropCell: {
