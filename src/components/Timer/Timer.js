@@ -1,46 +1,29 @@
 import React from 'react';
 import styles from './Timer.module.css';
+import { useState, useEffect } from 'react';
 
-class Timer extends React.Component {
-  constructor(props) {
-    super(props);
+function Timer(props) {
 
-    this.state = {
-      time: 0
-    };
-  }
+  const [ time, setTime ] = useState(0);
 
-  componentDidMount() {
-    this.timerID = setInterval(
-        () => this.tick(),
+  useEffect(() => {
+    const timerID = setInterval(
+        () => setTime(time + 1),
         1000
     );
-  }
+    return () => clearInterval(timerID);
+  });
 
-  componentWillUnmount() {
-    clearInterval(this.timerID)
-  }
+  const min = Math.floor(time / 60);
+  const sec = time % 60;
 
-  tick = () => {
-    this.setState({
-      time: this.state.time + 1
-    });
+  const addZero = (num) => {
+    return ((parseInt(num, 10) < 10) ? '0' : '') + num;
   };
 
-
-  render() {
-
-    const min = Math.floor(this.state.time / 60);
-    const sec = this.state.time % 60;
-
-    const addZero = (num) => {
-      return ((parseInt(num, 10) < 10) ? '0' : '') + num;
-    };
-
-    return (
-        <div className={styles.time}>Time: {addZero(min)}:{addZero(sec)}</div>
-    );
-  }
+  return (
+      <div className={styles.time}>Time: {addZero(min)}:{addZero(sec)}</div>
+  );
 }
 
 export default Timer;
