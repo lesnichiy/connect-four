@@ -30,7 +30,7 @@ const appNavigation = (state = initialState, action) => {
 
       return {
         ...state,
-        isSettingsOn
+        isSettingsOn: !isSettingsOn
       }
     }
     case 'BEST_SCORES_ON_OFF': {
