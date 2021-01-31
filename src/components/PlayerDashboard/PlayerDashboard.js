@@ -11,13 +11,19 @@ function PlayerDashboard(props) {
   const players = useSelector(state => state.players);
   const isGameOver = useSelector(state => state.appNavigation.isGameOver);
   const lastPlayerColor = useSelector(state => state.gameBoard.lastDiscDropCell.discColor);
+  const currentPlayer = useSelector(state => state.gameBoard.currentPlayer);
 
   let moves = (player === state.players.playerOne.color)
       ? players.playerOne.moves
       : players.playerTwo.moves;
 
+  const wrapperClasses = (player === currentPlayer)
+      ? [styles.wrapper].join(' ')
+      : [styles.wrapper, styles.inactive].join(' ');
+  console.log(player, currentPlayer);
+
   return (
-      <div className={styles.wrapper}>
+      <div className={wrapperClasses}>
         <div className={styles.player}>
           <div className={styles.title}>Player</div>
           <div className={[styles.chip, styles[player]].join(' ')}></div>

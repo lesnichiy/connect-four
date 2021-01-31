@@ -51,7 +51,6 @@ function GameBoardCell(props) {
 
   const changeCurrentColNum = (colNum) => dispatch(currentColCursorOverAction(colNum));
 
-
   //define func by condition. Lock movement of Current Chip if Game Over
   let handleMouseOver;
   if (isGameOver) {

@@ -7,6 +7,12 @@
   color: white;
   background-color: cornflowerblue;
   padding: 10px;
+  transition: 0.5s;
+}
+
+.inactive {
+  opacity: 0.6;
+
 }
 
 .player,
