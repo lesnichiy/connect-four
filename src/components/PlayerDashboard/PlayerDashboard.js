@@ -9,9 +9,12 @@ function PlayerDashboard(props) {
   const state = store.getState();
 
   const players = useSelector(state => state.players);
-  const isGameOver = useSelector(state => state.appNavigation.isGameOver);
-  const lastPlayerColor = useSelector(state => state.gameBoard.lastDiscDropCell.discColor);
-  const currentPlayer = useSelector(state => state.gameBoard.currentPlayer);
+  //const isGameOver = useSelector(state => state.appNavigation.isGameOver);
+  //const lastPlayerColor = useSelector(state => state.gameBoard.lastDiscDropCell.discColor);
+  //const currentPlayer = useSelector(state => state.gameBoard.currentPlayer);
+  const { currentPlayer } = state.gameBoard;
+  const lastPlayerColor = state.gameBoard.lastDiscDropCell.discColor;
+  const { isGameOver } = state.appNavigation;
 
   let moves = (player === state.players.playerOne.color)
       ? players.playerOne.moves
@@ -20,7 +23,6 @@ function PlayerDashboard(props) {
   const wrapperClasses = (player === currentPlayer)
       ? [styles.wrapper].join(' ')
       : [styles.wrapper, styles.inactive].join(' ');
-  console.log(player, currentPlayer);
 
   return (
       <div className={wrapperClasses}>

@@ -34,32 +34,24 @@ function GameBoardCell(props) {
   const cellColorClass = (currentCellColor) ? currentCellColor : '' ;
 
   //define func by condition. Lock Click if Game Over
-  let handleClickByCell;
-  if (isGameOver) {
-    handleClickByCell = () => {};
-  } else {
-    handleClickByCell = () => {
-      if ( state.gameBoard.board[colNum].length < 6 ) {
-        changePlayer(currentPlayer);
-        dropDiscToColumn(colNum, currentPlayer);
-        if (currentPlayer === playerOne.color) countMovesRed(currentPlayer);
-        if (currentPlayer === playerTwo.color) countMovesYellow(currentPlayer);
-        gameOver(checkWinner());
-      }
-    };
-  }
+  const handleClickByCell = () => {
+    if ( state.gameBoard.board[colNum].length < 6) {
+      if (isGameOver) return;
+      changePlayer(currentPlayer);
+      dropDiscToColumn(colNum, currentPlayer);
+      if (currentPlayer === playerOne.color) countMovesRed(currentPlayer);
+      if (currentPlayer === playerTwo.color) countMovesYellow(currentPlayer);
+      gameOver(checkWinner());
+    }
+  };
 
   const changeCurrentColNum = (colNum) => dispatch(currentColCursorOverAction(colNum));
 
   //define func by condition. Lock movement of Current Chip if Game Over
-  let handleMouseOver;
-  if (isGameOver) {
-    handleMouseOver = () => {};
-  } else {
-    handleMouseOver = () => {
-      changeCurrentColNum(colNum);
-    };
-  }
+  const handleMouseOver = () => {
+    if (isGameOver) return;
+    changeCurrentColNum(colNum);
+  };
 
   return (
       <div
