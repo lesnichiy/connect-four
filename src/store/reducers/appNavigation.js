@@ -38,7 +38,7 @@ const appNavigation = (state = initialState, action) => {
 
       return {
         ...state,
-        isBestScoresOn
+        isBestScoresOn: !isBestScoresOn
       }
     }
     case 'GAME_OVER': {

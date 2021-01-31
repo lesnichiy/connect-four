@@ -1,17 +1,17 @@
-import styles from './Settings.module.css';
+import styles from './BestScores.module.css';
 import ReturnToStartScreenBtn from '../ReturnToStartScreenBtn'
 
-function Settings() {
+function BestScores() {
   return (
       <div className={styles.wrapper}>
         <div className={styles['nav-wrapper']}>
           <ReturnToStartScreenBtn/>
         </div>
         <div>
-          <h2 className={styles.title}>Settings</h2>
+          <h2 className={styles.title}>Best Scores</h2>
         </div>
       </div>
   );
 }
 
-export default Settings;
+export default BestScores;

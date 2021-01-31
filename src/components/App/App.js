@@ -3,12 +3,14 @@ import StartScreen from '../StartScreen/StartScreen';
 import { useSelector } from 'react-redux';
 import Game from '../Game';
 import Settings from '../Settings';
+import BestScores from '../BestScores';
 
-function App(props) {
+function App() {
 
   const isGameOn = useSelector(state => state.appNavigation.isGameOn);
   const isStartScreenOn = useSelector(state => state.appNavigation.isStartScreenOn);
   const isSettingsOn = useSelector(state => state.appNavigation.isSettingsOn);
+  const isBestScoresOn = useSelector(state => state.appNavigation.isBestScoresOn);
 
   return (
     <div className={styles['app-wrapper']}>
@@ -16,6 +18,7 @@ function App(props) {
       {isStartScreenOn && <StartScreen/>}
       {isGameOn && <Game/>}
       {isSettingsOn && <Settings/>}
+      {isBestScoresOn && <BestScores/>}
     </div>
   );
 }
