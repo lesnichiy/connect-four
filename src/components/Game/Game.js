@@ -3,25 +3,18 @@ import GameBoard from '../GameBoard';
 import CurrentPlayerDashboard from '../CurrentPlayerDashboard';
 import PlayerDashboard from '../PlayerDashboard';
 import store from '../../store/store';
-import { useDispatch } from 'react-redux';
-import { returnToStartScreenAction } from '../../store/actions/returnToStartScreen';
 import Timer from '../Timer';
+import ReturnToStartScreenBtn from '../ReturnToStartScreenBtn';
 
 function Game(props) {
 
   const state = store.getState();
   const { playerOne, playerTwo } = state.players;
-  const dispatch = useDispatch();
-
-  const returnToStartScreen = () => dispatch(returnToStartScreenAction());
 
   return (
       <div className={styles.wrapper}>
         <div className={styles['nav-wrapper']}>
-          <button className={styles.button} onClick={(e) => {
-            e.preventDefault();
-            returnToStartScreen();
-          }}>Back to menu</button>
+          <ReturnToStartScreenBtn/>
         </div>
         <div className={styles['game-wrapper']}>
           <PlayerDashboard player={playerOne.color}/>

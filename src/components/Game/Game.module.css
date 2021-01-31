@@ -17,29 +17,6 @@
   align-items: center;
 }
 
-.button {
-  padding: 10px 16px;
-  background-color: navy;
-  color: white;
-  font-weight: bold;
-  font-size: 16px;
-  cursor: pointer;
-  border: 1px solid transparent;
-  transition: 0.5s;
-  border-radius: 6px;
-}
-
-.button:hover {
-  background: transparent;
-  color: navy;
-  border-color: navy;
-}
-
-.button:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px blue;
-}
-
 .time-wrapper {
   margin-top: 20px;
 }
