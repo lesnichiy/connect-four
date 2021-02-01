@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { returnToStartScreenAction } from '../../store/actions/returnToStartScreen';
 import styles from './ReturnToStartScreenBtn.module.css';
+import { Link } from 'react-router-dom';
 
 function ReturnToStartScreenBtn() {
   const dispatch = useDispatch();
@@ -8,10 +9,7 @@ function ReturnToStartScreenBtn() {
   const returnToStartScreen = () => dispatch(returnToStartScreenAction());
 
   return (
-      <button className={styles.button} onClick={(e) => {
-        e.preventDefault();
-        returnToStartScreen();
-      }}>Back to menu</button>
+      <Link to={'/'} className={styles.button} onClick={returnToStartScreen}>Back to menu</Link>
   );
 }
 

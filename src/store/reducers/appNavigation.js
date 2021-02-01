@@ -1,44 +1,17 @@
 const initialState = {
-  isStartScreenOn: true,
   isGameOn: false,
-  isSettingsOn: false,
-  isBestScoresOn: false,
   isGameOver: false
 };
 
 const appNavigation = (state = initialState, action) => {
 
   switch (action.type) {
-    case 'START_SCREEN_ON_OFF': {
-      const { isStartScreenOn } = action.payload;
-
-      return {
-        ...state,
-        isStartScreenOn: !isStartScreenOn
-      }
-    }
     case 'GAME_ON_OFF': {
       const { isGameOn } = action.payload;
 
       return {
           ...state,
           isGameOn: !isGameOn
-      }
-    }
-    case 'SETTINGS_ON_OFF': {
-      const { isSettingsOn } = action.payload;
-
-      return {
-        ...state,
-        isSettingsOn: !isSettingsOn
-      }
-    }
-    case 'BEST_SCORES_ON_OFF': {
-      const { isBestScoresOn } = action.payload;
-
-      return {
-        ...state,
-        isBestScoresOn: !isBestScoresOn
       }
     }
     case 'GAME_OVER': {
@@ -52,10 +25,7 @@ const appNavigation = (state = initialState, action) => {
     case 'RETURN_TO_START_SCREEN': {
       return {
         ...state,
-        isStartScreenOn: true,
         isGameOn: false,
-        isSettingsOn: false,
-        isBestScoresOn: false,
         isGameOver: false
       };
     }
