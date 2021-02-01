@@ -1,4 +1,5 @@
 import store from '../store/store';
+import { GAME_FIELD_COLUMNS_NUM, GAME_FIELD_ROWS_NUM, WINNER_COMBINATION_LENGTH } from './appConstants';
 
 export const checkWinner = () => {
   const state = store.getState();
@@ -11,7 +12,7 @@ export const checkWinner = () => {
     let countSameCell = 1;
     //horizontal check
     // go right
-    for (let i = col + 1; i <= 6; i++) {
+    for (let i = col + 1; i < GAME_FIELD_COLUMNS_NUM; i++) {
       if (currentBoardArray[i][row] === discColor) {
         countSameCell++;
       } else {
@@ -26,7 +27,7 @@ export const checkWinner = () => {
         break;
       }
     }
-    return (countSameCell >= 4);
+    return (countSameCell >= WINNER_COMBINATION_LENGTH);
   };
 
   const checkVertical = () => {
@@ -41,21 +42,21 @@ export const checkWinner = () => {
       }
     }
     //go to up
-    for (let i = row + 1; i <= 5; i++) {
+    for (let i = row + 1; i < GAME_FIELD_ROWS_NUM; i++) {
       if (currentBoardArray[col][i] === discColor) {
         countSameCell++;
       } else {
         break;
       }
     }
-    return (countSameCell >= 4);
+    return (countSameCell >= WINNER_COMBINATION_LENGTH);
   };
 
   const checkPrimaryDiagonal = () => {
     let countSameCell = 1;
     //Primary diagonal check
     // go down
-    for (let i = col + 1, j = row - 1; (i <= 6 && j >= 0); i++, j--) {
+    for (let i = col + 1, j = row - 1; (i < GAME_FIELD_COLUMNS_NUM && j >= 0); i++, j--) {
       if (currentBoardArray[i][j] === discColor) {
         countSameCell++;
       } else {
@@ -63,14 +64,14 @@ export const checkWinner = () => {
       }
     }
     //go up
-    for (let i = col - 1, j = row + 1; (i >= 0 && j <= 5); i--, j++) {
+    for (let i = col - 1, j = row + 1; (i >= 0 && j < GAME_FIELD_ROWS_NUM); i--, j++) {
       if (currentBoardArray[i][j] === discColor) {
         countSameCell++;
       } else {
         break;
       }
     }
-    return (countSameCell >= 4);
+    return (countSameCell >= WINNER_COMBINATION_LENGTH);
   };
 
   const checkSecondaryDiagonal = () => {
@@ -85,14 +86,14 @@ export const checkWinner = () => {
       }
     }
     //go up
-    for (let i = col + 1, j = row + 1; (i <= 6 && j <= 5); i++, j++) {
+    for (let i = col + 1, j = row + 1; (i < GAME_FIELD_COLUMNS_NUM && j < GAME_FIELD_ROWS_NUM); i++, j++) {
       if (currentBoardArray[i][j] === discColor) {
         countSameCell++;
       } else {
         break;
       }
     }
-    return (countSameCell >= 4);
+    return (countSameCell >= WINNER_COMBINATION_LENGTH);
   };
 
   if (checkHorizontal()

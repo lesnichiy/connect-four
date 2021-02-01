@@ -1,7 +1,8 @@
 import { useSelector } from 'react-redux';
 import styles from './CurrentPlayerDashboard.module.css';
+import { GAME_FIELD_WIDTH_OF_CELL_PX } from '../../utils/appConstants';
 
-function CurrentPlayerDashboard(props) {
+function CurrentPlayerDashboard() {
   const currentPlayer = useSelector(state => state.gameBoard.currentPlayer);
 
   const currentCol = useSelector(state => state.gameBoard.currentColCursorOver);
@@ -11,7 +12,7 @@ function CurrentPlayerDashboard(props) {
         {/*Current Player:*/}
         <div className={styles.chipWrapper}
              style={{
-               left: currentCol * 50 //shift on 50px - width of cell
+               left: currentCol * GAME_FIELD_WIDTH_OF_CELL_PX //shift on 50px - width of cell
              }}>
           <div className={[styles.chip, styles[currentPlayer]].join(' ')}>
           </div>
