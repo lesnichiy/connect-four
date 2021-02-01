@@ -9,7 +9,7 @@ function CurrentPlayerDashboard(props) {
   return (
       <div className={styles.wrapper}>
         {/*Current Player:*/}
-        <div className={styles['chip-wrapper']}
+        <div className={styles.chipWrapper}
              style={{
                left: currentCol * 50 //shift on 50px - width of cell
              }}>

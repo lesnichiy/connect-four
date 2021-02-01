@@ -4,7 +4,7 @@ import ReturnToStartScreenBtn from '../ReturnToStartScreenBtn'
 function Settings() {
   return (
       <div className={styles.wrapper}>
-        <div className={styles['nav-wrapper']}>
+        <div className={styles.navWrapper}>
           <ReturnToStartScreenBtn/>
         </div>
         <div>

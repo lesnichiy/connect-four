@@ -13,7 +13,7 @@ function App() {
   const isBestScoresOn = useSelector(state => state.appNavigation.isBestScoresOn);
 
   return (
-    <div className={styles['app-wrapper']}>
+    <div className={styles.appWrapper}>
       App: CONNECT FOUR (beta)
       {isStartScreenOn && <StartScreen/>}
       {isGameOn && <Game/>}

@@ -13,10 +13,10 @@ function Game(props) {
 
   return (
       <div className={styles.wrapper}>
-        <div className={styles['nav-wrapper']}>
+        <div className={styles.navWrapper}>
           <ReturnToStartScreenBtn/>
         </div>
-        <div className={styles['game-wrapper']}>
+        <div className={styles.gameWrapper}>
           <PlayerDashboard player={playerOne.color}/>
           <div>
             <CurrentPlayerDashboard/>
@@ -24,7 +24,7 @@ function Game(props) {
           </div>
           <PlayerDashboard player={playerTwo.color}/>
         </div>
-        <div className={styles['time-wrapper']}>
+        <div className={styles.timeWrapper}>
           <Timer/>
         </div>
       </div>

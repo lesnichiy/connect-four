@@ -5,7 +5,7 @@
   align-items: center;
 }
 
-.nav-wrapper {
+.navWrapper {
   align-self: flex-end;
   margin-right: 20px;
 }
