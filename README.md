@@ -1,4 +1,4 @@
-# Connect Four App
+# Connect Four Game
 
 `React`, `Redux`, `Javascript`, `HTML`, `CSS`
 
