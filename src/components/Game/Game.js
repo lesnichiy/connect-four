@@ -9,6 +9,7 @@ import ReturnToStartScreenBtn from '../ReturnToStartScreenBtn';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { returnToStartScreenAction } from '../../store/actions/returnToStartScreen';
+import { saveWinnerAction } from '../../store/actions/saveWinner';
 
 function Game() {
 
@@ -22,6 +23,13 @@ function Game() {
   useEffect(() => {
     return () => dispatch(returnToStartScreenAction());
   }, []);
+
+  useEffect(() => {
+    const color = state.gameBoard.lastDiscDropCell.discColor;
+    const moves = (color === playerOne.color) ? state.players.playerOne.moves : state.players.playerTwo.moves;
+
+    dispatch(saveWinnerAction(color, moves));
+  }, [isGameOver]);
 
   return (
       <div className={styles.wrapper}>
