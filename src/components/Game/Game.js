@@ -4,15 +4,17 @@ import CurrentPlayerDashboard from '../CurrentPlayerDashboard';
 import PlayerDashboard from '../PlayerDashboard';
 import store from '../../store/store';
 import Timer from '../Timer';
+import WinnerPopup from '../../components/WinnerPopup';
 import ReturnToStartScreenBtn from '../ReturnToStartScreenBtn';
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { returnToStartScreenAction } from '../../store/actions/returnToStartScreen';
 
 function Game() {
 
   const state = store.getState();
   const { playerOne, playerTwo } = state.players;
+  const isGameOver  = useSelector(state => state.appNavigation.isGameOver);
 
   const dispatch = useDispatch();
 
@@ -37,6 +39,7 @@ function Game() {
         <div className={styles.timeWrapper}>
           <Timer/>
         </div>
+        {isGameOver && <WinnerPopup/>}
       </div>
   );
 }

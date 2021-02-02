@@ -1,0 +1,31 @@
+.popupWrapper {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+}
+
+.popupWindow {
+  width: 300px;
+  min-height: 250px;
+  position: relative;
+  z-index: 15;
+  background-color: white;
+}
+
+.popupOverlay {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(41, 41, 41, 0.6);
+  transition: background-color 0.3s ease-in-out;
+}
