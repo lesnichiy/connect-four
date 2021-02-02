@@ -26,6 +26,14 @@ const winner = (state = initialState, action) => {
         isWin: true
       };
     }
+    case 'RETURN_TO_START_SCREEN': {
+      return {
+        isWin: false,
+        color: '',
+        moves: 0,
+        time: 0
+      };
+    }
     default:
       return state;
   }
