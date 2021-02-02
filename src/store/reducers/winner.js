@@ -1,4 +1,5 @@
 const initialState = {
+  isWin: false,
   color: '',
   moves: 0,
   time: 0
@@ -21,7 +22,8 @@ const winner = (state = initialState, action) => {
       return {
         ...state,
         color,
-        moves
+        moves,
+        isWin: true
       };
     }
     default:

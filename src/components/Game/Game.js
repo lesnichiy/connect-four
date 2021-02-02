@@ -15,7 +15,8 @@ function Game() {
 
   const state = store.getState();
   const { playerOne, playerTwo } = state.players;
-  const isGameOver  = useSelector(state => state.appNavigation.isGameOver);
+  const isGameOver = useSelector(state => state.appNavigation.isGameOver);
+  const isWin = useSelector(state => state.winner.isWin);
 
   const dispatch = useDispatch();
 
@@ -47,7 +48,7 @@ function Game() {
         <div className={styles.timeWrapper}>
           <Timer/>
         </div>
-        {isGameOver && <WinnerPopup/>}
+        {isWin && <WinnerPopup/>}
       </div>
   );
 }
