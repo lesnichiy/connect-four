@@ -1,0 +1,19 @@
+.wrapper {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  display: block;
+}
+
+.title {
+  margin: 0 0 0 25px;
+  font-size: 36px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  color: navy;
+  text-transform: uppercase;
+}

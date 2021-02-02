@@ -1,29 +1,11 @@
 .appWrapper {
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+  padding: 20px;
   margin: 10px auto;
   width: 800px;
   min-height: 500px;
   border: 1px solid navy;
   position: relative;
-}
-
-.appHeader {
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.logo {
-  display: block;
-}
-
-.title {
-  margin: 0 0 0 25px;
-  font-size: 36px;
-  font-family: Arial, sans-serif;
-  font-weight: bold;
-  color: navy;
-  text-transform: uppercase;
 }
