@@ -29,8 +29,10 @@ function Game() {
     const color = state.gameBoard.lastDiscDropCell.discColor;
     const moves = (color === playerOne.color) ? state.players.playerOne.moves : state.players.playerTwo.moves;
 
-    dispatch(saveWinnerAction(color, moves));
+    if (isGameOver) dispatch(saveWinnerAction(color, moves));
   }, [isGameOver]);
+
+  console.log(isGameOver);
 
   return (
       <div className={styles.wrapper}>
