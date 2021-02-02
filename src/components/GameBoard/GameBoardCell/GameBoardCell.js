@@ -9,6 +9,7 @@ import { currentColCursorOverAction } from '../../../store/actions/currentColCur
 import store from '../../../store/store';
 import { checkWinner } from '../../../utils/checkWinner';
 import { gameOverAction } from '../../../store/actions/gameOver';
+import { GAME_FIELD_ROWS_NUM } from '../../../utils/appConstants';
 
 function GameBoardCell(props) {
   const { rowNum, colNum } = props;
@@ -35,7 +36,7 @@ function GameBoardCell(props) {
 
   //define func by condition. Lock Click if Game Over
   const handleClickByCell = () => {
-    if ( state.gameBoard.board[colNum].length < 6) {
+    if ( state.gameBoard.board[colNum].length < GAME_FIELD_ROWS_NUM) {
       if (isGameOver) return;
       changePlayer(currentPlayer);
       dropDiscToColumn(colNum, currentPlayer);
