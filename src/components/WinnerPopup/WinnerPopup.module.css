@@ -12,6 +12,8 @@
 }
 
 .popupWindow {
+  border: 2px solid navy;
+  border-radius: 8px;
   width: 300px;
   min-height: 250px;
   position: relative;
@@ -26,6 +28,6 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(41, 41, 41, 0.6);
+  background-color: rgba(0, 0, 41, 0.6);
   transition: background-color 0.3s ease-in-out;
 }
