@@ -1,8 +1,10 @@
 import styles from './WinnerPopup.module.css';
 import store from '../../store/store';
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { closeWinnerPopupAction } from '../../store/actions/closeWinnerPopup';
 import { addZero } from '../../utils/addZero';
+import { saveResultInBestScores } from '../../utils/saveResultInBestScores';
 
 const WinnerPopup = () => {
   const state = store.getState();
@@ -15,6 +17,12 @@ const WinnerPopup = () => {
   const sec = time % 60;
 
   const timeStr = `${addZero(min)}:${addZero(sec)}`;
+
+
+  //set value in BestScores
+  useEffect(() => {
+    saveResultInBestScores(color, moves, time);
+  }, []);
 
   return (
       <div className={styles.popupWrapper}>
