@@ -26,6 +26,7 @@ const winner = (state = initialState, action) => {
         isWin: true
       };
     }
+    case 'CLOSE_WINNER_POPUP':
     case 'RETURN_TO_START_SCREEN': {
       return {
         isWin: false,

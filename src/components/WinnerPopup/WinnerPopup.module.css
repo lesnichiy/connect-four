@@ -95,3 +95,51 @@
   font-style: italic;
   text-align: center;
 }
+
+.close {
+  box-sizing: border-box;
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid navy;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.6);
+  transition: background-color 0.3s;
+}
+
+.close:hover {
+   background-color: navy;
+}
+
+.close:active {
+  outline: none;
+  opacity: 0.6;
+}
+
+.close:hover:before, .close:hover:after {
+ background-color: white;
+}
+
+.close:before, .close:after {
+  position: absolute;
+  box-sizing: border-box;
+  display: block;
+  left: 17px;
+  top: 9px;
+  content: ' ';
+  height: 20px;
+  width: 2px;
+  background-color: navy;
+  transition: background-color 0.3s;
+}
+
+.close:before {
+  transform: rotate(45deg);
+}
+
+.close:after {
+  transform: rotate(-45deg);
+}
