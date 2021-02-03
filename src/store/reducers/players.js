@@ -39,7 +39,6 @@ const players = (state = initialState, action) => {
     }
     case 'RETURN_TO_START_SCREEN': {
       return {
-        ...state,
         playerOne: {
           color: 'red',
           moves: 0

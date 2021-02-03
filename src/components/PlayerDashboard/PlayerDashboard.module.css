@@ -10,13 +10,13 @@
   transition: 0.5s;
 }
 
-.player,
-.moves {
+.player {
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
-.moves {
+.moves,
+.playerName {
   margin-top: 20px;
   font-weight: bold;
   font-size: 16px;

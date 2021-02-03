@@ -18,10 +18,11 @@ const winner = (state = initialState, action) => {
       };
     }
     case 'SAVE_WINNER': {
-      const { color, moves } = action.payload;
+      const { name, color, moves } = action.payload;
 
       return {
         ...state,
+        name,
         color,
         moves,
         isWin: true

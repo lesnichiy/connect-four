@@ -15,6 +15,7 @@ function Game() {
 
   const state = store.getState();
   const { playerOne, playerTwo } = state.players;
+  const { settings } = state;
   const isGameOver = useSelector(state => state.appNavigation.isGameOver);
   const isWin = useSelector(state => state.winner.isWin);
 
@@ -27,12 +28,10 @@ function Game() {
 
   useEffect(() => {
     const color = state.gameBoard.lastDiscDropCell.discColor;
-    const moves = (color === playerOne.color) ? state.players.playerOne.moves : state.players.playerTwo.moves;
-
-    if (isGameOver) dispatch(saveWinnerAction(color, moves));
+    const moves = (color === playerOne.color) ? playerOne.moves : playerTwo.moves;
+    const name = (color === playerOne.color) ? settings.playerRedName : settings.playerYellowName;
+    if (isGameOver) dispatch(saveWinnerAction(name, color, moves));
   }, [isGameOver]);
-
-  console.log(isGameOver);
 
   return (
       <div className={styles.wrapper}>

@@ -34,7 +34,7 @@ const WinnerPopup = () => {
                 closePopup();
               }}></button>
           <div className={styles.player}>
-            <div className={styles.title}>Player</div>
+            <div className={styles.title}>{name}</div>
             <div className={[styles.chip, styles[color]].join(' ')}></div>
             <div className={styles.wins}>WINS!</div>
           </div>
