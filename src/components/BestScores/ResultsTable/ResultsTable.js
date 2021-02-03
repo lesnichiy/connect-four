@@ -3,8 +3,8 @@ import {BEST_SCORES_LIST_NAME} from '../../../utils/appConstants';
 import ResultRow from './ResultRow';
 
 const ResultsTable = () => {
-  const currentBestScoresList = JSON.parse(localStorage.getItem(BEST_SCORES_LIST_NAME)) || [];
-  let resultsList = [];
+  const currentBestScoresList = JSON.parse(localStorage.getItem(BEST_SCORES_LIST_NAME)) || null;
+  let resultsList = null;
 
   if (currentBestScoresList) {
     resultsList = currentBestScoresList.map( (result, index) => {
@@ -28,7 +28,7 @@ const ResultsTable = () => {
           </tr>
           </thead>
           <tbody className={styles.tableBody}>
-            {resultsList || `Best resuls list is empty`}
+            {resultsList || <tr><td colSpan={4}>Best results list is empty</td></tr>}
           </tbody>
         </table>
       </div>
