@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import store from '../../store/store';
 import { stopTimerAction } from '../../store/actions/stopTimer';
+import { addZero } from '../../utils/addZero';
 
 function Timer() {
 
@@ -28,10 +29,6 @@ function Timer() {
 
   const min = Math.floor(time / 60);
   const sec = time % 60;
-
-  const addZero = (num) => {
-    return ((parseInt(num, 10) < 10) ? '0' : '') + num;
-  };
 
   return (
       <div className={styles.time}>Time: {addZero(min)}:{addZero(sec)}</div>

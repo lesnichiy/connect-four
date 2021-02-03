@@ -2,6 +2,7 @@ import styles from './WinnerPopup.module.css';
 import store from '../../store/store';
 import { useDispatch } from 'react-redux';
 import { closeWinnerPopupAction } from '../../store/actions/closeWinnerPopup';
+import { addZero } from '../../utils/addZero';
 
 const WinnerPopup = () => {
   const state = store.getState();
@@ -9,6 +10,11 @@ const WinnerPopup = () => {
 
   const dispatch = useDispatch();
   const closePopup = () => dispatch(closeWinnerPopupAction());
+
+  const min = Math.floor(time / 60);
+  const sec = time % 60;
+
+  const timeStr = `${addZero(min)}:${addZero(sec)}`;
 
   return (
       <div className={styles.popupWrapper}>
@@ -25,7 +31,7 @@ const WinnerPopup = () => {
             <div className={styles.wins}>WINS!</div>
           </div>
           <div className={styles.moves}>Moves: {moves}</div>
-          <div className={styles.time}>Time: {time}</div>
+          <div className={styles.time}>Time: {timeStr}</div>
           <div className={styles.offerToRequest}>You won in {moves} moves. Want to know an interesting fact about this number?</div>
         </div>
         <div className={styles.popupOverlay}></div>
