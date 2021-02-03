@@ -1,5 +1,6 @@
 const initialState = {
   isWin: false,
+  name: 'Incognito',
   color: '',
   moves: 0,
   time: 0
@@ -30,6 +31,7 @@ const winner = (state = initialState, action) => {
     case 'RETURN_TO_START_SCREEN': {
       return {
         isWin: false,
+        name: 'Incognito',
         color: '',
         moves: 0,
         time: 0

@@ -8,7 +8,7 @@ import { saveResultInBestScores } from '../../utils/saveResultInBestScores';
 
 const WinnerPopup = () => {
   const state = store.getState();
-  const { color, moves, time } = state.winner;
+  const { name, color, moves, time } = state.winner;
 
   const dispatch = useDispatch();
   const closePopup = () => dispatch(closeWinnerPopupAction());
@@ -21,7 +21,7 @@ const WinnerPopup = () => {
 
   //set value in BestScores
   useEffect(() => {
-    saveResultInBestScores(color, moves, time);
+    saveResultInBestScores(name, color, moves, time);
   }, []);
 
   return (

@@ -1,11 +1,12 @@
-import { BEST_SCORES_LIST_LENGTH } from './appConstants';
+import { BEST_SCORES_LIST_NAME, BEST_SCORES_LIST_LENGTH } from './appConstants';
 
-export const saveResultInBestScores = (player, moves, time) => {
+export const saveResultInBestScores = (name, color, moves, time) => {
 
-  const currentBestScoresList = JSON.parse(localStorage.getItem('bestScoresList')) || [];
+  const currentBestScoresList = JSON.parse(localStorage.getItem(BEST_SCORES_LIST_NAME)) || [];
 
   const bestScoresNewItem = {
-    color: player,
+    name,
+    color,
     moves,
     time
   };
@@ -14,5 +15,5 @@ export const saveResultInBestScores = (player, moves, time) => {
   currentBestScoresList.sort((prevItem, nextItem) => (prevItem.moves - nextItem.moves) || (prevItem.time - nextItem.time));
   currentBestScoresList.splice(BEST_SCORES_LIST_LENGTH);
 
-  localStorage.setItem('bestScoresList', JSON.stringify(currentBestScoresList));
+  localStorage.setItem(BEST_SCORES_LIST_NAME, JSON.stringify(currentBestScoresList));
 };
