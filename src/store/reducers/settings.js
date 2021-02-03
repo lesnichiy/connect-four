@@ -10,8 +10,8 @@ const settings = (state = initialState, action) => {
 
       return {
           ...state,
-        playerRedName,
-        playerYellowName
+        playerRedName: playerRedName || 'Incognito',
+        playerYellowName: playerYellowName || 'Incognito'
       };
     }
     default:
