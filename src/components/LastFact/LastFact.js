@@ -5,7 +5,7 @@ import ReturnToStartScreenBtn from '../ReturnToStartScreenBtn/ReturnToStartScree
 const LastFact = () => {
 
   const state = store.getState();
-  const { fact } = state.interestingFact;
+  const { fact, number } = state.interestingFact;
 
   return (
       <div className={styles.wrapper}>
@@ -14,6 +14,7 @@ const LastFact = () => {
         </div>
         <h2 className={styles.title}>Last Fact</h2>
         <div className={styles.fact}>
+          <div className={styles.number}>{number} is</div>
           &laquo;{fact}&raquo;
         </div>
       </div>

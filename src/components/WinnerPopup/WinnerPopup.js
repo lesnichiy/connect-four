@@ -34,11 +34,13 @@ const WinnerPopup = () => {
         .then(response => response.text())
         .then(data => {
           const text = JSON.parse(data).text;
-          dispatch(saveFactAction(text));
-          setTextAboutFact(`«${text}»`);
+          const number = JSON.parse(data).number;
+          dispatch(saveFactAction(text, number));
+          setTextAboutFact(`«${number} is ${text}»`);
         })
         .catch(err => {
           setTextAboutFact(`Something go wrong. Try later.`);
+          console.log(err);
         });
   };
 
