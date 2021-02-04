@@ -30,7 +30,10 @@ const WinnerPopup = () => {
           dispatch(saveFactAction(data));
           setTextAboutFact(`«${data}»`);
         })
-        .catch(err => console.log(err));
+        .catch(err => {
+          setTextAboutFact(`Something go wrong. Try later.`)
+          console.log(err);
+        });
   };
 
   //set value in BestScores
