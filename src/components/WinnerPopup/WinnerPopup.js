@@ -64,7 +64,7 @@ const WinnerPopup = () => {
           <div className={styles.moves}>Moves: {moves}</div>
           <div className={styles.time}>Time: {timeStr}</div>
           <div className={styles.offerToRequest}>{textAboutFact}</div>
-          <button onClick={getFact}>Get fact</button>
+          <button className={styles.getFactBtn} onClick={getFact}>Get fact</button>
         </div>
         <div className={styles.popupOverlay}></div>
       </div>

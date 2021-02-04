@@ -143,3 +143,30 @@
 .close:after {
   transform: rotate(-45deg);
 }
+
+.getFactBtn {
+  display: block;
+  box-sizing: border-box;
+  margin-top: 10px;
+  padding: 3px 5px;
+  background-color: navy;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid navy;
+  transition: 0.5s;
+  border-radius: 4px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.getFactBtn:hover {
+  background: transparent;
+  color: navy;
+  border-color: navy;
+}
+
+.getFactBtn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px blue;
+}
