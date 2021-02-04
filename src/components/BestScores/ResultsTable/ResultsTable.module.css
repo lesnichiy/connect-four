@@ -1,5 +1,5 @@
 .table {
-  width: 100%;
+  min-width: 600px;
   border-collapse: collapse;
 }
 
@@ -13,7 +13,7 @@
   font-weight: bold;
   font-size: 18px;
   padding: 10px;
-  min-width: 100px;
+  width: 25%;
 }
 
 .tableHeader th:not(:first-child),
@@ -31,4 +31,16 @@
   font-weight: bold;
   font-size: 16px;
   padding: 5px;
+}
+
+@media (max-width: 650px) {
+  .table {
+    min-width: 400px;
+  }
+}
+
+@media (max-width: 450px) {
+  .table {
+    min-width: 250px;
+  }
 }

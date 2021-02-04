@@ -39,12 +39,12 @@ const Game = () => {
           <ReturnToStartScreenBtn/>
         </div>
         <div className={styles.gameWrapper}>
-          <PlayerDashboard player={playerOne.color}/>
-          <div>
+          <PlayerDashboard className={styles.playerOne} player={playerOne.color}/>
+          <div className={styles.gameField} >
             <CurrentPlayerDashboard/>
             <GameBoard/>
           </div>
-          <PlayerDashboard player={playerTwo.color}/>
+          <PlayerDashboard className={styles.playerTwo}  player={playerTwo.color}/>
         </div>
         <div className={styles.timeWrapper}>
           <Timer/>

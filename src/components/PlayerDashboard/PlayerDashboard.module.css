@@ -62,3 +62,47 @@
   text-transform: uppercase;
   font-family: Arial, sans-serif;
 }
+
+@media (max-width: 780px) {
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 350px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 2px solid navy;
+    color: white;
+    background-color: cornflowerblue;
+    padding: 10px;
+    transition: 0.5s;
+  }
+  .player .title {
+    display: none;
+  }
+  .chip {
+    width: 40px;
+    height: 40px;
+    border: 1px solid navy;
+    box-shadow:
+        inset rgba(0,0,0,.6) 0 -3px 8px,
+        inset rgba(252,255,255,.7) 0 3px 8px,
+        rgba(0,0,0,.8) 0 3px 8px -3px;
+    transition: 0.3s;
+  }
+  .moves,
+  .playerName {
+    margin-top: 0;
+    margin-left: 15px;
+  }
+  .winner {
+    margin-top: 0;
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-family: Arial, sans-serif;
+  }
+}
