@@ -6,6 +6,7 @@ import { closeWinnerPopupAction } from '../../store/actions/closeWinnerPopup';
 import { saveFactAction } from '../../store/actions/saveFact';
 import { addZero } from '../../utils/addZero';
 import { saveResultInBestScores } from '../../utils/saveResultInBestScores';
+import { RAPIDAPI_NUMBERSAPI_KEY } from '../../utils/appConstants';
 
 const WinnerPopup = () => {
 
@@ -23,16 +24,23 @@ const WinnerPopup = () => {
   const timeStr = `${addZero(min)}:${addZero(sec)}`;
 
   const getFact = async () => {
-    const url = `http://numbersapi.com/${moves}/`;
-    fetch(url)
+    const url = `numbersapi.p.rapidapi.com`;
+
+    fetch(`https://${url}/${moves}/trivia?fragment=true&notfound=floor&json=true`, {
+      "method": "GET",
+      "headers": {
+        "x-rapidapi-key": RAPIDAPI_NUMBERSAPI_KEY,
+        "x-rapidapi-host": url
+      }
+    })
         .then(response => response.text())
         .then(data => {
-          dispatch(saveFactAction(data));
-          setTextAboutFact(`«${data}»`);
+          const text = JSON.parse(data).text;
+          dispatch(saveFactAction(text));
+          setTextAboutFact(`«${text}»`);
         })
         .catch(err => {
-          setTextAboutFact(`Something go wrong. Try later.`)
-          console.log(err);
+          setTextAboutFact(`Something go wrong. Try later.`);
         });
   };
 
