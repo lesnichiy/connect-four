@@ -14,7 +14,7 @@ const LastFact = () => {
         </div>
         <h2 className={styles.title}>Last Fact</h2>
         <div className={styles.fact}>
-          <div className={styles.number}>{number} is</div>
+          <div className={styles.number}>{number && `${number} is`} </div>
           &laquo;{fact}&raquo;
         </div>
       </div>
