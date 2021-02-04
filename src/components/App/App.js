@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import Game from '../Game';
 import Settings from '../Settings';
 import BestScores from '../BestScores';
+import LastFact from '../LastFact';
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
         <Route path={'/game'} component={Game} />
         <Route path={'/settings'} component={Settings} />
         <Route path={'/bestscores'} component={BestScores} />
+        <Route path={'/lastfact'} component={LastFact} />
       </Switch>
     </div>
   );

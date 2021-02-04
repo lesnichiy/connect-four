@@ -1,0 +1,25 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.navWrapper {
+  align-self: flex-end;
+  margin-right: 20px;
+}
+
+.title {
+  color: navy;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.fact {
+  margin-top: 100px;
+  font-size: 24px;
+  color: navy;
+  width: 50%;
+  text-align: center;
+}

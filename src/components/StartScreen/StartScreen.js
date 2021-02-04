@@ -18,6 +18,7 @@ function StartScreen() {
           <Link className={styles.button} to={'/game'} onClick={() => startGame(isGameOn)}>Start Game</Link>
           <Link className={styles.button} to={'/settings'}>Settings</Link>
           <Link className={styles.button} to={'/bestscores'}>Best Scores</Link>
+          <Link className={styles.button} to={'/lastfact'}>Last Fact</Link>
         </div>
       </div>
   );

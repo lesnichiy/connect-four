@@ -1,9 +1,10 @@
 import styles from './Settings.module.css';
 import ReturnToStartScreenBtn from '../ReturnToStartScreenBtn'
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { saveSettingsAction } from '../../store/actions/saveSettings';
 import store from '../../store/store'
+import { PLAYER_NAME_MAXLENGTH } from '../../utils/appConstants';
 
 function Settings() {
 
@@ -39,6 +40,7 @@ function Settings() {
                        type={'text'}
                        value={redPlayerName}
                        className={styles.input}
+                       maxLength={PLAYER_NAME_MAXLENGTH}
                        onChange={changePlayerName}/></label>
             </div>
             <div>
@@ -50,6 +52,7 @@ function Settings() {
                        type={'text'}
                        className={styles.input}
                        value={yellowPlayerName}
+                       maxLength={PLAYER_NAME_MAXLENGTH}
                        onChange={changePlayerName}/>
               </label>
             </div>
