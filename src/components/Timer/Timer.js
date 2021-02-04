@@ -6,7 +6,7 @@ import store from '../../store/store';
 import { stopTimerAction } from '../../store/actions/stopTimer';
 import { addZero } from '../../utils/addZero';
 
-function Timer() {
+const Timer = () => {
 
   const state = store.getState();
   const { isGameOver } = state.appNavigation;
@@ -33,6 +33,6 @@ function Timer() {
   return (
       <div className={styles.time}>Time: {addZero(min)}:{addZero(sec)}</div>
   );
-}
+};
 
 export default Timer;

@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { returnToStartScreenAction } from '../../store/actions/returnToStartScreen';
 import { saveWinnerAction } from '../../store/actions/saveWinner';
 
-function Game() {
+const Game = () => {
 
   const state = store.getState();
   const { playerOne, playerTwo } = state.players;
@@ -52,6 +52,6 @@ function Game() {
         {isWin && <WinnerPopup/>}
       </div>
   );
-}
+};
 
 export default Game;

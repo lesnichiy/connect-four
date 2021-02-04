@@ -6,7 +6,7 @@ import { saveSettingsAction } from '../../store/actions/saveSettings';
 import store from '../../store/store'
 import { PLAYER_NAME_MAXLENGTH } from '../../utils/appConstants';
 
-function Settings() {
+const Settings = () => {
 
   const dispatch = useDispatch();
 
@@ -61,6 +61,6 @@ function Settings() {
         </div>
       </div>
   );
-}
+};
 
 export default Settings;

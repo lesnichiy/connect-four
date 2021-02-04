@@ -11,7 +11,7 @@ import { checkWinner } from '../../../utils/checkWinner';
 import { gameOverAction } from '../../../store/actions/gameOver';
 import { GAME_FIELD_ROWS_NUM } from '../../../utils/appConstants';
 
-function GameBoardCell(props) {
+const GameBoardCell = (props) => {
   const { rowNum, colNum } = props;
 
   const state = store.getState();
@@ -63,7 +63,7 @@ function GameBoardCell(props) {
         </div>
       </div>
   );
-}
+};
 
 GameBoardCell.propTypes = {
   rowNum: PropTypes.number,

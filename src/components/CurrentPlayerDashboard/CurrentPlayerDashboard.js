@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import styles from './CurrentPlayerDashboard.module.css';
 import { GAME_FIELD_WIDTH_OF_CELL_PX } from '../../utils/appConstants';
 
-function CurrentPlayerDashboard() {
+const CurrentPlayerDashboard = () => {
   const currentPlayer = useSelector(state => state.gameBoard.currentPlayer);
 
   const currentCol = useSelector(state => state.gameBoard.currentColCursorOver);
@@ -19,6 +19,6 @@ function CurrentPlayerDashboard() {
         </div>
       </div>
   );
-}
+};
 
 export default CurrentPlayerDashboard;

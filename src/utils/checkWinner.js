@@ -100,9 +100,7 @@ export const checkWinner = () => {
       || checkVertical()
       || checkPrimaryDiagonal()
       || checkSecondaryDiagonal()
-  )
-  {
-    console.log(discColor, ' is WIN ');
+  ) {
     isWinner = true;
   }
 

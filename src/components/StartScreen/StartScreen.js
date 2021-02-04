@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Header from '../../components/Header';
 
-function StartScreen() {
+const StartScreen = () => {
 
   const isGameOn = useSelector(state => state.appNavigation.isGameOn);
   const dispatch = useDispatch();
@@ -22,6 +22,6 @@ function StartScreen() {
         </div>
       </div>
   );
-}
+};
 
 export default StartScreen;

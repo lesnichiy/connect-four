@@ -3,7 +3,7 @@ import { returnToStartScreenAction } from '../../store/actions/returnToStartScre
 import styles from './ReturnToStartScreenBtn.module.css';
 import { Link } from 'react-router-dom';
 
-function ReturnToStartScreenBtn() {
+const ReturnToStartScreenBtn = () => {
   const dispatch = useDispatch();
 
   const returnToStartScreen = () => dispatch(returnToStartScreenAction());
@@ -11,6 +11,6 @@ function ReturnToStartScreenBtn() {
   return (
       <Link to={'/'} className={styles.button} onClick={returnToStartScreen}>Back to menu</Link>
   );
-}
+};
 
 export default ReturnToStartScreenBtn;

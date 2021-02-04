@@ -6,7 +6,7 @@ import { closeWinnerPopupAction } from '../../store/actions/closeWinnerPopup';
 import { saveFactAction } from '../../store/actions/saveFact';
 import { addZero } from '../../utils/addZero';
 import { saveResultInBestScores } from '../../utils/saveResultInBestScores';
-import { RAPIDAPI_NUMBERSAPI_KEY } from '../../utils/appConstants';
+import { RAPIDAPI_NUMBERSAPI_KEY, RAPIDAPI_NUMBERSAPI_URL } from '../../utils/appConstants';
 
 const WinnerPopup = () => {
 
@@ -24,13 +24,11 @@ const WinnerPopup = () => {
   const timeStr = `${addZero(min)}:${addZero(sec)}`;
 
   const getFact = async () => {
-    const url = `numbersapi.p.rapidapi.com`;
-
-    fetch(`https://${url}/${moves}/trivia?fragment=true&notfound=floor&json=true`, {
+    fetch(`https://${RAPIDAPI_NUMBERSAPI_URL}/${moves}/trivia?fragment=true&notfound=floor&json=true`, {
       "method": "GET",
       "headers": {
         "x-rapidapi-key": RAPIDAPI_NUMBERSAPI_KEY,
-        "x-rapidapi-host": url
+        "x-rapidapi-host": RAPIDAPI_NUMBERSAPI_URL
       }
     })
         .then(response => response.text())

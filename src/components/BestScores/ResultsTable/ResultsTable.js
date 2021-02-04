@@ -1,5 +1,5 @@
 import styles from './ResultsTable.module.css';
-import {BEST_SCORES_LIST_NAME} from '../../../utils/appConstants';
+import { BEST_SCORES_LIST_NAME } from '../../../utils/appConstants';
 import ResultRow from './ResultRow';
 
 const ResultsTable = () => {

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {useSelector} from 'react-redux';
 import store from '../../store/store'
 
-function PlayerDashboard(props) {
+const PlayerDashboard = (props) => {
   const player = props.player;
 
   const state = store.getState();
@@ -33,7 +33,7 @@ function PlayerDashboard(props) {
           && <div className={styles.winner}>WINNER!!!</div>}
       </div>
   );
-}
+};
 
 PlayerDashboard.propTypes = {
   player: PropTypes.string

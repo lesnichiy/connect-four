@@ -6,7 +6,7 @@ import Settings from '../Settings';
 import BestScores from '../BestScores';
 import LastFact from '../LastFact';
 
-function App() {
+const App = () => {
 
   return (
     <div className={styles.appWrapper}>
@@ -19,6 +19,6 @@ function App() {
       </Switch>
     </div>
   );
-}
+};
 
 export default App;
